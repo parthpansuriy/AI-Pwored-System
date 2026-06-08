@@ -121,7 +121,7 @@ def login_validation():
 
     # ADMIN LOGIN
 
-    if username == "admin" and password == "admin123":
+    if username == "PP" and password == "pARTh@21019934":
 
         session["admin"] = "admin"
         session["user"] = "Admin"
@@ -147,7 +147,7 @@ def login_validation():
 
     if user:
 
-        session["user"] = user[1]
+        session["user"] = user[1] # type: ignore
 
         return redirect("/employee_form")
 
