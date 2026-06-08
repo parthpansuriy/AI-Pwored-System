@@ -1,0 +1,638 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0f172a;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #111827;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav h2 {
+    color: #3b82f6;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #3b82f6;
+}
+
+/* =========================
+   HOME HERO SECTION
+========================= */
+
+.hero {
+    width: 90%;
+    margin: auto;
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero .left {
+    flex: 1;
+}
+
+.hero .left h1 {
+    font-size: 65px;
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.hero .left p {
+    font-size: 20px;
+    line-height: 1.9;
+    color: #d1d5db;
+    margin-bottom: 35px;
+}
+
+.hero .left button {
+    padding: 18px 40px;
+    border: none;
+    border-radius: 12px;
+    background: #3b82f6;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero .left button:hover {
+    background: #2563eb;
+    transform: scale(1.03);
+}
+
+.hero .right {
+    flex: 1;
+    text-align: center;
+}
+
+.hero .right img {
+    width: 450px;
+}
+
+/* =========================
+   FEATURE SECTION
+========================= */
+
+.features {
+    width: 90%;
+    margin: auto;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 45px;
+    margin-bottom: 60px;
+}
+
+.feature-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-boxes .card {
+    background: #1e293b;
+    padding: 40px 30px;
+    border-radius: 20px;
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.feature-boxes .card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-boxes .card h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #3b82f6;
+}
+
+.feature-boxes .card p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #d1d5db;
+}
+
+/* =========================
+   AUTH PAGES
+========================= */
+
+.auth-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+}
+
+.auth-left {
+    flex: 1;
+    text-align: center;
+}
+
+.auth-left h1 {
+    font-size: 60px;
+    color: #3b82f6;
+    margin-bottom: 20px;
+}
+
+.auth-left p {
+    font-size: 22px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.auth-left img {
+    width: 350px;
+}
+
+.auth-form {
+    flex: 1;
+    background: #1e293b;
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.auth-form h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #d1d5db;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 12px;
+    background: #334155;
+    color: white;
+    font-size: 17px;
+}
+
+.auth-form input::placeholder {
+    color: #cbd5e1;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    background: #3b82f6;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-form button:hover {
+    background: #2563eb;
+}
+
+.bottom-text {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+.bottom-text a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+/* =========================
+   PREDICTION FORM
+========================= */
+
+.prediction-section {
+    width: 60%;
+    margin: 80px auto;
+    background: #1e293b;
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.prediction-section h2 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.prediction-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.prediction-section input,
+.prediction-section select {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 12px;
+    background: #334155;
+    color: white;
+    font-size: 18px;
+}
+
+.work {
+    display: flex;
+    gap: 20px;
+}
+
+.prediction-section button {
+    padding: 20px;
+    border: none;
+    border-radius: 14px;
+    background: #3b82f6;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.prediction-section button:hover {
+    background: #2563eb;
+}
+
+/* =========================
+   DASHBOARD HERO
+========================= */
+
+.dashboard-hero {
+    width: 90%;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-left h1 {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+.hero-left p {
+    font-size: 24px;
+    color: #d1d5db;
+    line-height: 1.8;
+}
+
+.hero-right img {
+    width: 420px;
+}
+
+/* =========================
+   STATS SECTION
+========================= */
+
+.stats-section {
+    width: 90%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.stat-card {
+    background: #1e293b;
+    padding: 40px 25px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+}
+
+.stat-card i {
+    font-size: 45px;
+    color: #3b82f6;
+    margin-bottom: 20px;
+}
+
+.stat-card h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.stat-card p {
+    font-size: 20px;
+    color: #d1d5db;
+}
+
+/* =========================
+   RECOMMENDATION SECTION
+========================= */
+
+.recommendation-section {
+    width: 90%;
+    margin: 50px auto;
+    background: #1e293b;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.recommendation-section h2 {
+    font-size: 42px;
+    color: #3b82f6;
+    margin-bottom: 35px;
+}
+
+.recommendation-section ul {
+    padding-left: 25px;
+}
+
+.recommendation-section ul li {
+    font-size: 22px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* =========================
+   PROFILE MENU
+========================= */
+
+.profile-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* DROPDOWN */
+
+.dropdown {
+    position: absolute;
+    right: 0;
+    top: 75px;
+    width: 200px;
+    background: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+/* SHOW DROPDOWN */
+
+.dropdown.show-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* DROPDOWN LINKS */
+
+.dropdown a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.dropdown a:hover {
+    background: #334155;
+    color: #3b82f6;
+}
+
+/* =========================
+   REPORT BUTTON
+========================= */
+
+.report-download {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 60px 0;
+}
+
+.report-download button {
+    padding: 20px 45px;
+    border: none;
+    border-radius: 14px;
+    background: #3b82f6;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.report-download button:hover {
+    background: #2563eb;
+    transform: translateY(-5px);
+}
+
+/* =========================
+   BOTTOM FEATURE CARDS
+========================= */
+
+.dashboard-cards {
+    width: 90%;
+    margin: 40px auto 80px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.dashboard-card-box {
+    background: #1e293b;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.dashboard-card-box:hover {
+    transform: translateY(-10px);
+}
+
+.dashboard-card-box i {
+    font-size: 55px;
+    color: #3b82f6;
+    margin-bottom: 25px;
+}
+
+.dashboard-card-box h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.dashboard-card-box p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #d1d5db;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111827;
+    padding: 30px;
+    text-align: center;
+    margin-top: 60px;
+    color: #d1d5db;
+}
+/* =========================
+   TABLE SECTION
+========================= */
+
+.table-section {
+
+    width: 95%;
+
+    margin: 50px auto;
+
+    background: #1e293b;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+
+}
+
+.table-section h2 {
+
+    font-size: 40px;
+
+    margin-bottom: 30px;
+
+    color: #3b82f6;
+
+    text-align: center;
+
+}
+
+.table-container {
+
+    overflow-x: auto;
+
+}
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+table thead {
+
+    background: #3b82f6;
+
+}
+
+table thead th {
+
+    padding: 18px;
+
+    font-size: 18px;
+
+    color: white;
+
+    text-align: center;
+
+}
+
+table tbody tr {
+
+    border-bottom: 1px solid #334155;
+
+    transition: 0.3s;
+
+}
+
+table tbody tr:hover {
+
+    background: #334155;
+
+}
+
+table tbody td {
+
+    padding: 16px;
+
+    text-align: center;
+
+    font-size: 17px;
+
+    color: #e2e8f0;
+
+}

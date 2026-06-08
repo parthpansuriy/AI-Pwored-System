@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Burnout Prediction Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Burnout Prediction Result</h1>
+
+    <h2>{{ prediction }}</h2>
+
+    <h3>Burnout Risk: {{ burnout_percentage }}%</h3>
+
+<div class="progress-bar">
+
+   <div class="progress" style="width: {{ burnout_percentage }}%;"></div>
+
+</div>
+
+    <h3>Employee Details</h3>
+
+    <p><strong>Age:</strong> {{ age }}</p>
+
+    <p><strong>Stress Level:</strong> {{ stress_level }}</p>
+
+    <p><strong>Sleep Hours:</strong> {{ sleep_hours }}</p>
+
+    <p><strong>Work Hour Type:</strong> {{ work_type }}</p>
+
+    <p><strong>Entered Work Hours:</strong> {{ work_hours }}</p>
+
+    <p><strong>Converted Weekly Hours:</strong> {{ weekly_hours }}</p>
+
+    <h3>Recommendation</h3>
+
+    {% if prediction == "High Burnout" %}
+
+        <p>
+            ⚠ High burnout detected.
+            Reduce workload, improve sleep,
+            and maintain work-life balance.
+        </p>
+
+    {% elif prediction == "Moderate Burnout" %}
+
+        <p>
+            ⚠ Moderate burnout risk.
+            Take short breaks and manage stress properly.
+        </p>
+
+    {% else %}
+
+        <p>
+            ✅ Healthy condition.
+            Keep maintaining good balance and wellness.
+        </p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/">Go Back</a>
+
+</div>
+
+</body>
+</html>

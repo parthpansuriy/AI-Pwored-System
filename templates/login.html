@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Login | BurnoutAI</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <!-- =========================
+        LEFT SIDE
+        ========================= -->
+
+        <div class="auth-left">
+
+            <h1>BurnoutAI</h1>
+
+            <p>
+
+                AI-Powered Employee Wellness &
+                Burnout Prediction Platform
+
+            </p>
+
+            <img
+            src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+            alt="AI Login">
+
+        </div>
+
+        <!-- =========================
+        LOGIN FORM
+        ========================= -->
+
+        <form
+        class="auth-form"
+        action="/login_validation"
+        method="POST">
+
+            <h1>Welcome Back</h1>
+
+            <p class="subtitle">
+
+                Login to continue
+
+            </p>
+
+            <!-- ERROR MESSAGE -->
+
+            {% if error %}
+
+            <div
+            style="
+            background:#ff4d4d;
+            color:white;
+            padding:12px;
+            border-radius:10px;
+            margin-bottom:20px;
+            text-align:center;
+            font-size:15px;
+            font-weight:bold;">
+
+                {{ error }}
+
+            </div>
+
+            {% endif %}
+
+            <!-- USERNAME INPUT -->
+
+            <input
+            type="text"
+            name="username"
+            placeholder="Enter Username"
+            required>
+
+            <!-- PASSWORD INPUT -->
+
+            <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            required>
+
+            <!-- LOGIN BUTTON -->
+
+            <button type="submit">
+
+                Login
+
+            </button>
+
+            <!-- SIGNUP LINK -->
+
+            <p class="bottom-text">
+
+                Don't have an account?
+
+                <a href="/signup">
+
+                    Signup
+
+                </a>
+
+            </p>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

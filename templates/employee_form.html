@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Form</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>BurnoutAI</h2>
+
+    <ul>
+
+        <li>
+            <a href="/">Home</a>
+        </li>
+
+        <li>
+            <a href="/logout">
+                Logout
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- =========================
+PREDICTION FORM
+========================= -->
+
+<section class="prediction-section">
+
+    <h2>Burnout Prediction Form</h2>
+
+    <form action="/predict" method="POST">
+
+        <input
+        type="number"
+        name="age"
+        placeholder="Enter Age"
+        required>
+
+        <input
+        type="number"
+        name="stress_level"
+        placeholder="Stress Level (1-10)"
+        required>
+
+        <input
+        type="number"
+        name="sleep_hours"
+        placeholder="Sleep Hours"
+        required>
+
+        <div class="work">
+
+            <input
+            type="number"
+            name="work_hours"
+            placeholder="Work Hours"
+            required>
+
+            <select name="work_type">
+
+                <option value="day">
+
+                    Per Day
+
+                </option>
+
+                <option value="week">
+
+                    Per Week
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <button type="submit">
+
+            Predict Burnout
+
+        </button>
+
+    </form>
+
+</section>
+
+</body>
+
+</html>

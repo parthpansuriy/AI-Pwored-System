@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav>
+
+        <h2>BurnoutAI</h2>
+
+        <ul>
+
+            
+
+            <li><a href="/dashboard">Dashboard</a></li>
+
+            <li><a href="/logout">Logout</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="dashboard-hero">
+
+        <div class="hero-left">
+
+            <h1>Admin Dashboard</h1>
+
+            <p>
+                Monitor employee burnout analytics,
+                AI predictions, wellness reports,
+                and database activities in real time.
+            </p>
+
+        </div>
+
+        <div class="hero-right">
+
+            <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         STATS SECTION
+    ========================== -->
+
+    <section class="stats-section">
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h2>{{ total_predictions }}</h2>
+
+            <p>Total Records</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-brain"></i>
+
+            <h2>AI System</h2>
+
+            <p>Active</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-database"></i>
+
+            <h2>Database</h2>
+
+            <p>Connected</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <h2>Analytics</h2>
+
+            <p>Running</p>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         TABLE SECTION
+    ========================== -->
+
+    <section class="table-section">
+
+        <h2>Employee Prediction Records</h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Age</th>
+                        <th>Stress</th>
+                        <th>Sleep</th>
+                        <th>Work Type</th>
+                        <th>Work Hours</th>
+                        <th>Prediction</th>
+                        <th>Burnout %</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for row in records %}
+
+                    <tr>
+
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                        <td>{{ row[4] }}</td>
+                        <td>{{ row[5] }}</td>
+                        <td>{{ row[6] }}</td>
+                        <td>{{ row[7] }}%</td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            BurnoutAI Admin Dashboard |
+            Developed by Parth Pansuriya
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

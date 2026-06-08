@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Signup | BurnoutAI</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="auth-container">
+
+    <!-- LEFT SIDE -->
+
+    <div class="auth-left">
+
+        <h1>BurnoutAI</h1>
+
+        <p>
+
+            AI-Powered Employee Wellness &
+            Burnout Prediction Platform
+
+        </p>
+
+        <img
+        src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
+
+    </div>
+
+    <!-- SIGNUP FORM -->
+
+    <form
+    class="auth-form"
+    action="/signup_validation"
+    method="POST">
+
+        <h1>Create Account</h1>
+
+        <p class="subtitle">
+
+            Join BurnoutAI Platform
+
+        </p>
+
+        <!-- ERROR MESSAGE -->
+
+        {% if error %}
+
+        <div
+        style="
+        background:#ff4d4d;
+        color:white;
+        padding:12px;
+        border-radius:10px;
+        margin-bottom:20px;
+        text-align:center;
+        font-size:15px;
+        font-weight:bold;">
+
+            {{ error }}
+
+        </div>
+
+        {% endif %}
+
+        <!-- FULL NAME -->
+
+        <input
+        type="text"
+        name="full_name"
+        placeholder="Enter Username"
+        required>
+
+        <!-- EMAIL -->
+
+        <input
+        type="email"
+        name="email"
+        placeholder="Enter Email"
+        required>
+
+        <!-- PASSWORD -->
+
+        <input
+        type="password"
+        name="password"
+        placeholder="Enter Password"
+        required>
+
+        <!-- BUTTON -->
+
+        <button type="submit">
+
+            Signup
+
+        </button>
+
+        <!-- LOGIN LINK -->
+
+        <p class="bottom-text">
+
+            Already have an account?
+
+            <a href="/login">
+
+                Login
+
+            </a>
+
+        </p>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

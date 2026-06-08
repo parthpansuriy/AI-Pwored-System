@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>User Dashboard | BurnoutAI</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- =========================
+NAVBAR
+========================= -->
+
+<nav>
+
+    <h2>BurnoutAI</h2>
+
+    <ul>
+
+        <li>
+
+            <a href="/">
+
+                Home
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#analytics-section">
+
+                Analytics
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#report-section">
+
+                Reports
+
+            </a>
+
+        </li>
+
+    </ul>
+
+    <!-- PROFILE -->
+
+    <div class="profile-menu">
+
+        <img
+        src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+        class="profile-icon">
+
+        <div class="dropdown">
+
+            <a href="#">
+
+                {{ username }}
+
+            </a>
+
+            <a href="/logout">
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- =========================
+WELCOME SECTION
+========================= -->
+
+<section class="dashboard-hero">
+
+    <div class="hero-left">
+
+        <h1>
+
+            Welcome,
+            {{ username }}
+
+        </h1>
+
+        <p>
+
+            AI-powered employee wellness
+            and burnout monitoring platform.
+
+        </p>
+
+    </div>
+
+    <div class="hero-right">
+
+        <img
+        src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
+
+    </div>
+
+</section>
+
+<!-- =========================
+STATS SECTION
+========================= -->
+
+<section
+class="stats-section"
+id="analytics-section">
+
+    <!-- CARD 1 -->
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-brain"></i>
+
+        <h2>
+
+            {{ burnout_percentage }}%
+
+        </h2>
+
+        <p>
+
+            Burnout Risk
+
+        </p>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-heart-pulse"></i>
+
+        <h2>
+
+            {{ prediction }}
+
+        </h2>
+
+        <p>
+
+            Stress Status
+
+        </p>
+
+    </div>
+
+    <!-- CARD 3 -->
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-bed"></i>
+
+        <h2>
+
+            {{ sleep_hours }} hrs
+
+        </h2>
+
+        <p>
+
+            Sleep Hours
+
+        </p>
+
+    </div>
+
+    <!-- CARD 4 -->
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <h2>
+
+            {{ work_hours }} hrs
+
+        </h2>
+
+        <p>
+
+            Weekly Workload
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+AI RECOMMENDATIONS
+========================= -->
+
+<section class="recommendation-section">
+
+    <h2>
+
+        AI Wellness Recommendations
+
+    </h2>
+
+    <ul>
+
+        <li>
+
+            Maintain at least
+            <strong>7-8 hours</strong>
+            of sleep daily.
+
+        </li>
+
+        <li>
+
+            Reduce work pressure and
+            take regular short breaks.
+
+        </li>
+
+        <li>
+
+            Practice meditation,
+            exercise, or yoga.
+
+        </li>
+
+        <li>
+
+            Maintain proper
+            work-life balance.
+
+        </li>
+
+        <li>
+
+            Improve mental wellness
+            and stress management activities.
+
+        </li>
+
+    </ul>
+
+</section>
+
+<!-- =========================
+REPORT DOWNLOAD
+========================= -->
+
+<section
+class="report-download"
+id="report-section">
+
+    <a href="/generate_report?burnout_percentage={{ burnout_percentage }}&prediction={{ prediction }}&sleep_hours={{ sleep_hours }}&stress_level={{ stress_level }}&work_hours={{ work_hours }}">
+
+        <button>
+
+            Download AI Report
+
+        </button>
+
+    </a>
+
+</section>
+
+<!-- =========================
+FEATURE CARDS
+========================= -->
+
+<section class="dashboard-cards">
+
+    <!-- CARD 1 -->
+
+    <div class="dashboard-card-box">
+
+        <i class="fa-solid fa-robot"></i>
+
+        <h2>
+
+            AI Prediction
+
+        </h2>
+
+        <p>
+
+            Predict burnout risks using
+            Machine Learning algorithms.
+
+        </p>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="dashboard-card-box">
+
+        <i class="fa-solid fa-chart-pie"></i>
+
+        <h2>
+
+            Analytics
+
+        </h2>
+
+        <p>
+
+            Analyze employee stress,
+            workload, and wellness metrics.
+
+        </p>
+
+    </div>
+
+    <!-- CARD 3 -->
+
+    <div class="dashboard-card-box">
+
+        <i class="fa-solid fa-file-waveform"></i>
+
+        <h2>
+
+            Reports
+
+        </h2>
+
+        <p>
+
+            Generate employee wellness
+            reports instantly.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+
+        © 2026 BurnoutAI |
+        AI Employee Wellness Monitoring System
+
+    </p>
+
+</footer>
+
+<!-- =========================
+PROFILE DROPDOWN SCRIPT
+========================= -->
+
+<script>
+
+    const profileIcon =
+    document.querySelector(".profile-icon");
+
+    const dropdown =
+    document.querySelector(".dropdown");
+
+    profileIcon.addEventListener("click", () => {
+
+        dropdown.classList.toggle("show-dropdown");
+
+    });
+
+</script>
+
+</body>
+
+</html>
